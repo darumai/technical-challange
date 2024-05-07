@@ -27,16 +27,18 @@ class Api::V1::DocumentsController < ApplicationController
       document_data: document_data
     )
 
-    document.save!
-
-    # Respond with JSON representation of the created document
-    render json: {
-      uuid: document.uuid,
-      pdf_url: document.pdf_url,
-      description: document.description,
-      document_data: document_data,
-      created_at: document.created_at
-    }, status: :created
+    if document.save
+      # Respond with JSON representation of the created document
+      render json: {
+        uuid: document.uuid,
+        pdf_url: document.pdf_url,
+        description: document.description,
+        document_data: document_data,
+        created_at: document.created_at
+      }, status: :created
+    else
+      render json: document.errors, status: :unprocessable_entity
+    end
   end
 
   private
