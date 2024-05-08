@@ -42,6 +42,7 @@ module PdfGenerator
 
   def self.uploader(pdf_path,uuid)
     if Rails.env.production?
+      GOOGLE_STORAGE_BUCKET.create_file(pdf_path,"#{uuid}.pdf")
     else
       ENV['ROOT_URL']+"/pdf/#{uuid}.pdf"
     end
