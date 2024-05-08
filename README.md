@@ -19,7 +19,7 @@ sudo apt-get install pandoc weasyprint
 The famous [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf "wkhtmltopdf") gem is now deprecated (last Ubuntu version with support was 22.04 and the current stable version of Debian is not supported), so I went with a more native solution instead, that being [Pandoc](https://pandoc.org/ "Pandoc") for it's reliability and performance.
 The application has been coded in such a way that replacing the software responsible for rendering PDFs is as simple as it gets, as the document generation logic is completely agnostic to it. Adding [Pupeteer](https://pptr.dev/ "Pupeteer") as the main or fallback renderer is a possibility, for example.
 
-##Installing and running the project
+## Installing and running the project
 ```
 $ bundle install
 $ rake db:create
@@ -93,7 +93,7 @@ below:
   "created_at": "2012-04-23T18:25:43.511Z"
 }
 ```
-##Tests
+## Tests
 To run the test suite, execute the following command within the app's root directory:
 ```
 bundle exec rspec 
