@@ -1,5 +1,5 @@
 module PdfGenerator
-	def self.create(template,document_data,uuid,renderer="pandoc")
+  def self.create(template,document_data,uuid,renderer="pandoc")
     # Defines path for soon to be PDF file
     pdf_path = Rails.root.join('public/pdf',"#{uuid}.pdf")
 
@@ -24,7 +24,7 @@ module PdfGenerator
 
     # Returns PDF url based on environment
     uploader(pdf_path,uuid)
-	end
+  end
 
   def self.render_pdf(renderer,html_path,pdf_path,css_path)
     case renderer
