@@ -3,7 +3,7 @@ module PdfGenerator
     # Defines path for soon to be PDF file
     pdf_path = Rails.root.join('public/pdf',"#{uuid}.pdf")
 
-		# Save HTML content to a temporary file
+    # Save HTML content to a temporary file
     html_file = Tempfile.new(["#{uuid}",".html"])
 
     css_file = Tempfile.new(["#{uuid}",".css"])
