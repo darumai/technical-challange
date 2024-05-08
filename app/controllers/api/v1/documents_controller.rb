@@ -1,5 +1,12 @@
 class Api::V1::DocumentsController < ApplicationController
   def list
+    render json: Document.all.map { |d| { uuid: d.uuid, 
+                                          pdf_url: d.pdf_url, 
+                                          description: d.description, 
+                                          document_data: { 
+                                            customer_name: d.customer_name, 
+                                            contract_value: d.contract_value }, 
+                                          created_at: d.created_at }}
   end
 
   def create
@@ -44,7 +51,6 @@ class Api::V1::DocumentsController < ApplicationController
   private
 
   def document_params
-    params.permit(:description, {document_data: [:customer_name, :contract_value, :test_var]}, :template, :format, :document)
+    params.permit(:description, { document_data: [:customer_name, :contract_value, :test_var] }, :template, :format, :document)
   end
-
 end
