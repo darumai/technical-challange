@@ -8,7 +8,7 @@ Main requirements for running the project:
 - [dotenv-rails](https://github.com/bkeepers/dotenv "dotenv-rails")
 - [rspec-rails](https://github.com/rspec/rspec-rails "rspec-rails")
 - [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails "factory_bot_rails")
-##Specific Dependencies
+## Specific Dependencies
 - [pandoc](https://pandoc.org/ "pandoc")
 - [weasyprint](https://weasyprint.org/ "weasyprint")
 
